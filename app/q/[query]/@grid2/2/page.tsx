@@ -1,5 +1,5 @@
-import Link from "next/link";
-import { Card } from "@/components/Card";
+import Card from "@/components/Card";
+import LoadMore from "@/components/LoadMore";
 
 export default async function Grid() {
   let cards = Array.from({ length: 6 }, (_, i) => i + 1);
@@ -11,7 +11,7 @@ export default async function Grid() {
           <Card key={id} id={id.toString()} />
         ))}
       </section>
-      <Link href="/q/rugs/3">More</Link>
+      <LoadMore />
     </div>
   );
 }

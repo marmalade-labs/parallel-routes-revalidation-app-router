@@ -2,7 +2,7 @@ import { ReactNode } from "react";
 import "./globals.css"
 
 export default function RootLayout(
-  { children, home, home2, home3 }: { children: ReactNode, home: ReactNode, home2: ReactNode, home3: ReactNode }
+  { children, home }: { children: ReactNode, home: ReactNode }
 ) {
   return (
     <html>
@@ -10,8 +10,6 @@ export default function RootLayout(
       <body>
         {children}
         {home}
-        {home2}
-        {home3}
       </body>
     </html>
   );

@@ -5,7 +5,8 @@ import { upvote } from "../actions";
 
 const getCardCount = unstable_cache(
   async (id: string) => kv.get<number>(`card:${id}`),
-  ['cards']
+  ['cards'],
+  { tags: ["cards"] },
 );
 
 export default async function Card({ id }: { id: string }) {

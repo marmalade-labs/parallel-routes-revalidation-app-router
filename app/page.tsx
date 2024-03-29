@@ -3,7 +3,8 @@ import { unstable_cache } from "next/cache";
 
 const getTotalCount = unstable_cache(
   async () => kv.get<number>("total"),
-  ['total']
+  ['total'],
+  { tags: ["total"] },
 );
 
 export default async function Home() {

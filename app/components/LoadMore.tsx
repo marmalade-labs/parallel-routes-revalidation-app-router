@@ -7,7 +7,7 @@ export default function LoadMore() {
   const pathname = usePathname()
   let nextUrl: string;
   if (pathname.endsWith("2")) {
-    nextUrl = `${pathname.substring(0, pathname.length - 1)}/3`
+    nextUrl = `${pathname.substring(0, pathname.length - 1)}3`
   } else if (pathname === "/") {
     nextUrl = "/2";
   } else {

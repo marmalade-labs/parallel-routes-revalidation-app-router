@@ -1,8 +1,11 @@
 "use client";
 
-export default function Upvote({ id, action }: { id: string, action: (formData: FormData) => Promise<{ success: boolean }> }) {
+export default function Upvote({ id, action }: { id: string, action: (formData: FormData) => Promise<{ cardId: string, cardCount: number, totalCount: number }> }) {
   return (
-    <form action={async (formData: FormData) => await action(formData)}>
+    <form action={async (formData: FormData) => {
+      const res = await action(formData)
+      console.log(res);
+    }}>
       <button type="submit">Upvote</button>
     </form>
   )

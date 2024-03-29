@@ -9,7 +9,6 @@ const getCardCount = unstable_cache(
 );
 
 export default async function CardClient({ id }: { id: string }) {
-  console.log("CardClient")
   const count = await getCardCount(id);
   return (
     <div className="flex flex-col justify-center items-center h-48 bg-gray-300	rounded-lg no-underline text-2xl font-medium max-w-48">
@@ -20,7 +19,6 @@ export default async function CardClient({ id }: { id: string }) {
 }
 
 export async function CardServer({ id }: { id: string }) {
-  console.log("CardServer")
   const count = await getCardCount(id);
   return (
     <div className="flex flex-col justify-center items-center h-48 bg-gray-300	rounded-lg no-underline text-2xl font-medium max-w-48">

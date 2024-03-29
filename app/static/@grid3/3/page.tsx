@@ -2,6 +2,7 @@ import Card from "@/components/Card";
 
 export default async function Grid() {
   let cards = Array.from({ length: 6 }, (_, i) => i + 1);
+  console.log("static - @grid3")
 
   return (
     <div>

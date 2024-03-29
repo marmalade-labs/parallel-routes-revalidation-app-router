@@ -1,4 +1,4 @@
 export default function Default() {
-  console.log("Default - static");
+  console.log("Default - @home");
   return null;
 }

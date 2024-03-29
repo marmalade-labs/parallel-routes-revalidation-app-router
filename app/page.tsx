@@ -1,11 +1,4 @@
-import { kv } from "@vercel/kv";
-import { unstable_cache } from "next/cache";
-
-const getTotalCount = unstable_cache(
-  async () => kv.get<number>("total"),
-  ['total'],
-  { tags: ["total"] },
-);
+import { getTotalCount } from "./api";
 
 export default async function Home() {
   const total = await getTotalCount();

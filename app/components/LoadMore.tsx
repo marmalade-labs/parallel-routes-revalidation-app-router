@@ -8,13 +8,15 @@ export default function LoadMore({ search = false }: { search?: boolean }) {
   let nextPathname: string;
   if (pathname.endsWith("2")) {
     nextPathname = `${pathname.substring(0, pathname.length - 1)}3`
+  } else if (pathname.endsWith("3")) {
+    nextPathname = `${pathname.substring(0, pathname.length - 1)}4`
   } else if (pathname === "/") {
     nextPathname = "/2";
   } else {
     nextPathname = `${pathname}/2`
   }
   const nextUrl = search ? `${nextPathname}?test=1` : nextPathname
-  // console.log(`Navigating to ${nextUrl}`)
+  console.log(`Navigating to ${nextUrl}`)
 
   return (<button onClick={(() => router.replace(nextUrl, { scroll: false }))}>Load More {search && " (breaks)"}</button>)
 }

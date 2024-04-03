@@ -2,14 +2,17 @@ import { ReactNode } from "react";
 import "./globals.css"
 
 export default function RootLayout(
-  { children, home }: { children: ReactNode, home: ReactNode }
+  { children, grid, grid2, grid3 }: { children: ReactNode, grid: ReactNode, grid2: ReactNode, grid3: React.ReactNode }
 ) {
   return (
     <html>
-      <head />
       <body>
-        {children}
-        {home}
+        <section>
+          {children}
+          {grid}
+          {grid2}
+          {grid3}
+        </section>
       </body>
     </html>
   );

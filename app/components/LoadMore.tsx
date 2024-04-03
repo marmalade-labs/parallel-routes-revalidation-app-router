@@ -2,18 +2,19 @@
 
 import { usePathname, useRouter } from "next/navigation";
 
-export default function LoadMore() {
+export default function LoadMore({ search = false }: { search?: boolean }) {
   const router = useRouter();
   const pathname = usePathname()
-  let nextUrl: string;
+  let nextPathname: string;
   if (pathname.endsWith("2")) {
-    nextUrl = `${pathname.substring(0, pathname.length - 1)}3`
+    nextPathname = `${pathname.substring(0, pathname.length - 1)}3`
   } else if (pathname === "/") {
-    nextUrl = "/2";
+    nextPathname = "/2";
   } else {
-    nextUrl = `${pathname}/2`
+    nextPathname = `${pathname}/2`
   }
+  const nextUrl = search ? `${nextPathname}?test=1` : nextPathname
   // console.log(`Navigating to ${nextUrl}`)
 
-  return (<button onClick={(() => router.replace(nextUrl, { scroll: false }))}>Load More</button>)
+  return (<button onClick={(() => router.replace(nextUrl, { scroll: false }))}>Load More {search && " (breaks)"}</button>)
 }

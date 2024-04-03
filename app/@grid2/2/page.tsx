@@ -1,9 +1,8 @@
 import Card from "@/components/Card";
-import LoadMore from "@/components/LoadMore";
 
 export default async function Grid() {
   let cards = Array.from({ length: 6 }, (_, i) => i + 1);
-  console.log("dynamic - @grid")
+  console.log("static - @grid2")
 
   return (
     <div>
@@ -12,7 +11,6 @@ export default async function Grid() {
           <Card key={id} id={id.toString()} />
         ))}
       </section>
-      <LoadMore />
     </div>
   );
 }

@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 
 export default function LoadMore({ search = false }: { search?: boolean }) {
@@ -18,5 +19,5 @@ export default function LoadMore({ search = false }: { search?: boolean }) {
   const nextUrl = search ? `${nextPathname}?test=1` : nextPathname
   console.log(`Navigating to ${nextUrl}`)
 
-  return (<button onClick={(() => router.replace(nextUrl, { scroll: false }))}>Load More {search && " (breaks)"}</button>)
+  return (<Link href={nextUrl} scroll={false}>Load More {search && " (breaks)"}</Link>)
 }
